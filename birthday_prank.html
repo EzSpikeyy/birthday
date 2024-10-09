@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Prank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #clickBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the button if you dare!</h1>
+    <button id="clickBtn">Click Me!</button>
+    <div id="message">ఆహా, చాలాసేపు పట్టుకుంది కదా! జన్మదిన శుభాకాంక్షలు... ఏమంత గొప్పది అనుకోకు!</div>
+
+    <script>
+        let clicks = 0;
+        const button = document.getElementById('clickBtn');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            clicks++;
+            if (clicks < 5) {
+                button.textContent = `Try Again (${clicks})`;
+            } else {
+                button.style.display = 'none';
+                message.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
